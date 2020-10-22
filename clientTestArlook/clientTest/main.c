@@ -5,7 +5,7 @@
 
 #pragma comment(lib, "ws2_32.lib") //원속 lib link
 #define BUFLEN 1024
-#define PORT 61557
+#define PORT 8080
 
 int main()
 {
@@ -28,7 +28,7 @@ int main()
 	memset(&fromServer, 0, sizeof(fromServer));
 
 	fromServer.sin_family = AF_INET;
-	fromServer.sin_addr.s_addr = inet_addr("192.168.0.24");
+	fromServer.sin_addr.s_addr = inet_addr("127.0.0.1");
 	fromServer.sin_port = htons(PORT);
 	clientSocket = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
 
